@@ -14,10 +14,18 @@ int main() {
 
     struct Node * current =malloc(sizeof(struct Node));
     current->data = 98;
-    current->next = current;
+    current->next = NULL;
+    head->next = current;
+
+    current = malloc(sizeof(struct Node));
+    current->data = 23;
+    current->next = NULL;
+
+    head->next->next = current;
 
     printf("%d\n",head->data);
-    printf("%d",current->data);
+    printf("%d\n",head->next->data);
+    printf("%d\n",head->next->next->data);
 
     return 0;
 }
