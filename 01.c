@@ -45,6 +45,21 @@ void insertatbegining()
     head = newnode;
 }
 
+void insertatend()
+{
+    newnode = (struct node *)malloc(sizeof(struct node));
+    printf("Enter Data :");
+    scanf("%d", &newnode->data);
+    newnode->next = NULL;
+
+    temp = head;
+    while (temp->next)
+    {
+        temp = temp->next;
+    }
+    temp->next = newnode;
+}
+
 void display()
 {
     printf("\nlinked list: ");
@@ -63,7 +78,7 @@ int main()
     while (1)
     {
 
-        printf("\n1.Create\n2.Display\n3.Insert At Begining\n4.exit");
+        printf("\n1.Create\n2.Display\n3.Insert At Begining\n4.exit\n5.insert at End");
         printf("\nEnter Your choice:");
         scanf("%d", &choice);
         switch (choice)
@@ -79,6 +94,9 @@ int main()
             break;
         case 4:
             exit(0);
+            break;
+        case 5:
+            insertatend();
             break;
         default:
             printf("Invalid choice. Please try again.\n");
