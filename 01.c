@@ -1,53 +1,73 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-struct node{
+struct node
+{
     int data;
-    struct node * next;
+    struct node *next;
 };
-struct node * head = NULL;
-struct node * temp,*newnode;
+struct node *head = NULL;
+struct node *temp, *newnode;
 
-void create(){
-    int n;
-    printf("Enter the number of nodes you want to create: ");
+void create()
+{
+    int n, i;
+    printf("Enter Number of Nodes You want :");
     scanf("%d", &n);
-    for(int i=0;i<n;i++){
-    newnode = (struct node *)malloc(sizeof(struct node));
-    printf("Enter Data:");
-    scanf("%d", &newnode->data);
-    newnode->next =NULL;
-    
-    if(head == NULL){
-        head = newnode;
-    }else{
-        temp=head;
-       while(temp->next){
-            temp = temp->next;
-       }
+    for (i = 0; i < n; i++)
+    {
+        newnode = (struct node *)malloc(sizeof(struct node));
+        printf("Enter Data :");
+        scanf("%d", &newnode->data);
+        newnode->next = NULL;
+        if (head == NULL)
+        {
+            head = newnode;
+        }
+        else
+        {
+            temp = head;
+            while (temp->next != NULL)
+            {
+                temp = temp->next;
+            }
+            temp->next = newnode;
+        }
     }
-    temp->next = newnode;
-    printf("Data inserted successfully.\n");
- }
 }
 
-void display(){
-    printf("Liked List:");
-    temp=head;
-    while(temp->data){
-        printf("%d",temp->data);
+void insertatbegining()
+{
+    newnode = (struct node *)malloc(sizeof(struct node));
+    printf("Enter Data :");
+    scanf("%d", &newnode->data);
+    newnode->next = head;
+    head = newnode;
+}
+
+void display()
+{
+    printf("\nlinked list: ");
+    temp = head;
+    while (temp)
+    {
+        printf("%d -> ", temp->data);
         temp = temp->next;
     }
+    printf("NULL");
 }
 
 int main()
 {
     int choice;
-    while(1){
-    printf("Enter Your choice:\n");
-    printf("\n1.Create\n2.Display\n3.Exit");
-    scanf("%d", &choice);
-    switch(choice){
+    while (1)
+    {
+
+        printf("\n1.Create\n2.Display\n3.Insert At Begining\n4.exit");
+        printf("\nEnter Your choice:");
+        scanf("%d", &choice);
+        switch (choice)
+        {
         case 1:
             create();
             break;
@@ -55,11 +75,13 @@ int main()
             display();
             break;
         case 3:
+            insertatbegining();
+            break;
+        case 4:
             exit(0);
             break;
         default:
             printf("Invalid choice. Please try again.\n");
+        }
     }
-    }
-    return 0;
 }

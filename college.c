@@ -34,7 +34,7 @@ void display(){
     printf("linked list: ");
     temp = head;
     while(temp){
-        printf("%d ", temp->data);
+        printf("%d ->", temp->data);
         temp = temp->next;
     }
 }
