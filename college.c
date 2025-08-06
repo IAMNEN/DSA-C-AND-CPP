@@ -30,6 +30,7 @@ void multipalnode(){
         }
     }
 }
+
 void display(){
     printf("linked list: ");
     temp = head;
