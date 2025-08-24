@@ -108,7 +108,7 @@ void deleteatend(){
         return;
     }
     temp = head;
-    if(temp->next == NULL){ // Only one node
+    if(temp->next == NULL){
         free(temp);
         head = NULL;
         return;
