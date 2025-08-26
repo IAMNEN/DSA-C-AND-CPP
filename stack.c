@@ -45,8 +45,7 @@ void Display()
         printf("%d -> ", a[i]);
     }
     printf("NULL\n");
-}
-
+}q
 void main()
 {
     int choice;
