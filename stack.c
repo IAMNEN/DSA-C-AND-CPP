@@ -20,27 +20,31 @@ void push()
             return;
         }
         else
-        { 
+        {
             top++;
             a[top] = x;
         }
     }
 }
+
 void pop()
 {
     printf("Popped Element is %d\n", a[top]);
     top--;
 }
+
 void peek()
 {
     printf("Top Element is %d\n", a[top]);
 }
+
 void Display()
 {
     for (int i = top; i >= 0; i--)
     {
-        printf("%d ->", a[i]);
+        printf("%d -> ", a[i]);
     }
+    printf("NULL\n");
 }
 
 void main()

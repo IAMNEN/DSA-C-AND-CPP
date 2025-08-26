@@ -94,7 +94,7 @@ void deletenode(){
     temp=head;
     if(head == NULL){
         printf("List is empty.\n");
-        return;
+        return; 
     }
     else{
         head = head->next;
