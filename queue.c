@@ -5,7 +5,7 @@
 
 int queue[size], front = -1, rear = -1;
 
-void anqueue()
+void Enqueue()
 {
     if ((rear + 1) % size == front)
         printf("Queue is full");
@@ -64,7 +64,7 @@ int main()
         printf("Enter choice: ");
         scanf("%d", &choice);
         if (choice == 1)
-            anqueue();
+            Enqueue();
         else if (choice == 2)
             dequeue();
         else if (choice == 3)
