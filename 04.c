@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
-#define size 5
+#define size 10
 
 int queue[size], front = -1, rear = -1;
 
@@ -24,27 +24,22 @@ void Enqueue()
 
 void dequeue()
 {
-    printf("\nDeleted",queue[front]);
-    front=front+1%size;
+    printf("\nDeleted: %d\n", queue[front]);
+    front = (front + 1) % size;
 }
 
 void display()
 {
-    if (front == -1)
-        printf("\nQueue is Empty\n");
-    else
+    printf("\nQueue: ");
+    int i = front;
+    while (1)
     {
-        printf("\nQueue: ");
-        int i = front;
-        while (1)
-        {
-            printf("%d ", queue[i]);
-            if (i == rear)
-                break;
-            i = (i + 1) % size;
-        }
-        printf("\n");
+        printf("%d ", queue[i]);
+        if (i == rear)
+            break;
+        i = (i + 1) % size;
     }
+    printf("\n");
 }
 
 int main()
