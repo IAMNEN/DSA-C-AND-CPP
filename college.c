@@ -48,8 +48,7 @@ void insertatbeginning(){
     head = newnode;
 }
 
-void insertAtEnd()
-{
+void insertAtEnd(){
     newnode = (struct node *)malloc(sizeof(struct node));
     printf("Enter the data: ");
     scanf("%d", &newnode->data);
