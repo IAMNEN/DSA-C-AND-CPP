@@ -25,4 +25,15 @@ int precedence(char ch){
 void infixpostfix(){
     char infix[SIZE],postfix[SIZE];
     int K = 0;
+    printf("enter Infix Expression ->");
+    scanf("%s",infix);
+
+    for(int i = 0;infix[i];i++){
+        char ch = infix[i];
+        if(isalnum(ch)){
+            postfix[K++]=ch;
+            
+        }
+
+    }
 }
