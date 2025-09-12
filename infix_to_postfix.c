@@ -32,7 +32,10 @@ void infixpostfix(){
         char ch = infix[i];
         if(isalnum(ch)){
             postfix[K++]=ch;
-            
+
+        }
+        else if(ch =='()'){
+            push(ch);
         }
 
     }
