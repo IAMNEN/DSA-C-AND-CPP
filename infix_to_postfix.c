@@ -34,8 +34,18 @@ void infixpostfix(){
             postfix[K++]=ch;
 
         }
-        else if(ch =='()'){
+        else if(ch =='('){
             push(ch);
+        }
+        else if(ch == ')'){
+            while(stack[top]!='(')
+         
+            postfix[K++]=pop();
+            pop();
+        }
+        else{
+            while(top != -1 && precedence(stack[top])>=precedence(ch))
+            postfix[K++]=pop();
         }
 
     }
