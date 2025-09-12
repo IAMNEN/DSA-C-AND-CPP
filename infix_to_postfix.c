@@ -46,6 +46,7 @@ void infixpostfix(){
         else{
             while(top != -1 && precedence(stack[top])>=precedence(ch))
             postfix[K++]=pop();
+            push(ch);
         }
 
     }
