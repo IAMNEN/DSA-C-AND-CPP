@@ -48,6 +48,5 @@ void infixpostfix(){
             postfix[K++]=pop();
             push(ch);
         }
-
     }
 }
